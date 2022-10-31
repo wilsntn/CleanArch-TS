@@ -1,3 +1,4 @@
+import crypto from 'crypto';
 export type BraceletProps = {
   name: string;
   email?: string;
@@ -5,11 +6,13 @@ export type BraceletProps = {
 };
 
 export class Bracelet {
+  public readonly id: string;
   public props: Required<BraceletProps>;
-  constructor(props: BraceletProps) {
+  constructor(props: BraceletProps, id?: string) {
+    this.id = id || crypto.randomUUID();
     this.props = {
       ...props,
-      email: props.email || "",
+      email: props.email || '',
     };
   }
   updateName(name: string) {
@@ -28,7 +31,7 @@ export class Bracelet {
     if (this.props.email) {
       return this.props.email;
     } else {
-      return "";
+      return '';
     }
   }
 
@@ -52,6 +55,6 @@ export class Bracelet {
   }
 
   toJSON() {
-    return this.props;
+    return { id: this.id, ...this.props };
   }
 }

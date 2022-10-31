@@ -1,4 +1,4 @@
-import { Bracelet, BraceletProps } from '../domain/bracelet.entity';
+import { Bracelet, BraceletProps } from '../../domain/bracelet.entity';
 import { BraceletInMemoryRepository } from './bracelet-in-memory.repository';
 
 describe('BraceletInMemoryRepository Test', () => {
