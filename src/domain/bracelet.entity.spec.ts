@@ -1,57 +1,58 @@
-import { Bracelet, BraceletProps } from "./bracelet.entity";
+import { Bracelet, BraceletProps } from './bracelet.entity';
 
-describe("Bracelet test", () => {
-  test("constructor", () => {
+describe('Bracelet test', () => {
+  test('constructor', () => {
     let braceletProps: BraceletProps = {
-      name: "Wilcson",
-      code: "12312412",
+      name: 'Wilcson',
+      code: '12312412',
     };
 
     let bracelet = new Bracelet(braceletProps);
     expect(bracelet.props).toStrictEqual({
       ...braceletProps,
-      email: "",
+      email: '',
     });
 
     braceletProps = {
-      name: "Wilcson",
-      code: "12312412",
-      email: "wilcson.denner@gmail.com",
+      name: 'Wilcson',
+      code: '12312412',
+      email: 'wilcson.denner@gmail.com',
     };
     bracelet = new Bracelet(braceletProps);
+    expect(bracelet.id).toBeDefined();
     expect(bracelet.props).toStrictEqual({
       ...braceletProps,
-      email: "wilcson.denner@gmail.com",
+      email: 'wilcson.denner@gmail.com',
     });
   });
 
-  test("updateName method", () => {
+  test('updateName method', () => {
     let braceletProps: BraceletProps = {
-      name: "Wilcson",
-      code: "12312412",
+      name: 'Wilcson',
+      code: '12312412',
     };
 
     let bracelet = new Bracelet(braceletProps);
-    bracelet.updateName("Denner");
-    expect(bracelet.name).toBe("Denner");
+    bracelet.updateName('Denner');
+    expect(bracelet.name).toBe('Denner');
   });
 
-  test("updateCode method", () => {
+  test('updateCode method', () => {
     let braceletProps: BraceletProps = {
-      name: "Wilcson",
-      code: "12312412",
+      name: 'Wilcson',
+      code: '12312412',
     };
 
     let bracelet = new Bracelet(braceletProps);
-    bracelet.updateCode("12312412");
-    expect(bracelet.code).toBe("12312412");
+    bracelet.updateCode('12312412');
+    expect(bracelet.code).toBe('12312412');
   });
 
-  test("toJSON method", () => {
+  test('toJSON method', () => {
     let braceletProps: BraceletProps = {
-      name: "Wilcson",
-      code: "12312412",
-      email: "wilcson.denner@gmail.com",
+      name: 'Wilcson',
+      code: '12312412',
+      email: 'wilcson.denner@gmail.com',
     };
 
     let bracelet = new Bracelet(braceletProps);
@@ -59,54 +60,54 @@ describe("Bracelet test", () => {
     expect(bracelet.props).toStrictEqual(braceletProps);
   });
 
-  test("updateEmail method", () => {
+  test('updateEmail method', () => {
     let braceletProps: BraceletProps = {
-      name: "Wilcson",
-      code: "12312412",
+      name: 'Wilcson',
+      code: '12312412',
     };
 
     let bracelet = new Bracelet(braceletProps);
-    expect(bracelet.email).toBe("");
+    expect(bracelet.email).toBe('');
   });
 
-  test("updateEmail with email method", () => {
+  test('updateEmail with email method', () => {
     let braceletProps: BraceletProps = {
-      name: "Wilcson",
-      code: "12312412",
-      email: "wilcson.denner@gmail.com",
+      name: 'Wilcson',
+      code: '12312412',
+      email: 'wilcson.denner@gmail.com',
     };
 
     let bracelet = new Bracelet(braceletProps);
-    expect(bracelet.email).toBe("wilcson.denner@gmail.com");
+    expect(bracelet.email).toBe('wilcson.denner@gmail.com');
   });
 
-  test("get name method", () => {
+  test('get name method', () => {
     let braceletProps: BraceletProps = {
-      name: "Wilcson",
-      code: "12312412",
+      name: 'Wilcson',
+      code: '12312412',
     };
 
     let bracelet = new Bracelet(braceletProps);
-    expect(bracelet.name).toBe("Wilcson");
+    expect(bracelet.name).toBe('Wilcson');
   });
 
-  test("get code method", () => {
+  test('get code method', () => {
     let braceletProps: BraceletProps = {
-      name: "Wilcson",
-      code: "12312412",
+      name: 'Wilcson',
+      code: '12312412',
     };
 
     let bracelet = new Bracelet(braceletProps);
-    expect(bracelet.code).toBe("12312412");
+    expect(bracelet.code).toBe('12312412');
   });
 
-  test("get email method", () => {
+  test('get email method', () => {
     let braceletProps: BraceletProps = {
-      name: "Wilcson",
-      code: "12312412",
+      name: 'Wilcson',
+      code: '12312412',
     };
 
     let bracelet = new Bracelet(braceletProps);
-    expect(bracelet.email).toBe("");
+    expect(bracelet.email).toBe('');
   });
 });

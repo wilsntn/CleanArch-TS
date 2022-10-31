@@ -1,5 +1,5 @@
-import { Bracelet } from "../domain/bracelet.entity";
-import { BraceletRepositoryInterface } from "../domain/bracelet.repository";
+import { Bracelet } from '../domain/bracelet.entity';
+import { BraceletRepositoryInterface } from '../domain/bracelet.repository';
 
 export class CreateBraceletUseCase {
   constructor(private braceletRepository: BraceletRepositoryInterface) {}
@@ -17,6 +17,7 @@ type CreateBraceletInput = {
 };
 
 type CreateBraceletOutput = {
+  id: string;
   name: string;
   email?: string;
   code: string;
